@@ -1,3 +1,5 @@
+Angular2 Minimum starter based on https://github.com/AngularClass/angular2-webpack-starter
+
 # How to use
 
 ```
