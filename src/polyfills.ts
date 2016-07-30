@@ -1,39 +1,31 @@
-import 'es6-shim';
-import 'es6-promise';
-// (these modules are what is in 'angular2/bundles/angular2-polyfills' so don't use that here)
-import 'es7-reflect-metadata/dist/browser';
-import 'zone.js/lib/browser/zone-microtask';
+// Polyfills
 
-// in Production you may want to remove this
-import 'zone.js/lib/browser/long-stack-trace-zone';
+// import 'ie-shim'; // Internet Explorer 9 support
 
+// import 'core-js/es6';
+// Added parts of es6 which are necessary for your project or your browser support requirements.
+import 'core-js/es6/symbol';
+import 'core-js/es6/object';
+import 'core-js/es6/function';
+import 'core-js/es6/parse-int';
+import 'core-js/es6/parse-float';
+import 'core-js/es6/number';
+import 'core-js/es6/math';
+import 'core-js/es6/string';
+import 'core-js/es6/date';
+import 'core-js/es6/array';
+import 'core-js/es6/regexp';
+import 'core-js/es6/map';
+import 'core-js/es6/set';
+import 'core-js/es6/weak-map';
+import 'core-js/es6/weak-set';
+import 'core-js/es6/typed';
+import 'core-js/es6/reflect';
+// see issue https://github.com/AngularClass/angular2-webpack-starter/issues/709
+// import 'core-js/es6/promise';
 
-(<any>global).__extends = (this && this.__extends) || function (d?: any, b?: any) {
-  for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-  var __: any = function() { this.constructor = d; };
-  d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+import 'core-js/es7/reflect';
+import 'zone.js/dist/zone';
 
-(<any>global).__decorate = (<any>global).Reflect.decorate;
-(<any>global).__metadata = (<any>global).Reflect.metadata;
-
-(<any>global).__param = (this && this.__param) || function (paramIndex?: any, decorator?: any) {
-  return function (target?: any, key?: any) { decorator(target, key, paramIndex); };
-};
-
-(<any>global).__awaiter = (this && this.__awaiter) ||
-  function (thisArg?: any, _arguments?: any, Promise?: any, generator?: any) {
-    return new Promise(function (resolve?: any, reject?: any) {
-      generator = generator.call(thisArg, _arguments);
-      function cast(value?: any) {
-        return value instanceof Promise && value.constructor === Promise ?
-        value : new Promise(function (resolve?: any) { resolve(value); }); }
-      function onfulfill(value?: any) { try { step('next', value); } catch (e) { reject(e); } }
-      function onreject(value?: any) { try { step('throw', value); } catch (e) { reject(e); } }
-      function step(verb?: any, value?: any) {
-        var result = generator[verb](value);
-        result.done ? resolve(result.value) : cast(result.value).then(onfulfill, onreject);
-      }
-      step('next', void 0);
-    });
-  };
+// Typescript emit helpers polyfill
+import 'ts-helpers';

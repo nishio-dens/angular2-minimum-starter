@@ -1,11 +1,14 @@
-import {Component} from 'angular2/core';
+import { Component } from '@angular/core';
 
 @Component({
-  moduleId: module.id,
+  selector: 'hello',
   template: `
-  Hello Angular2 World
+  Hello I'm Angular2.
   `
 })
 
 export class HelloComponent {
+  ngOnInit() {
+    console.log('Hello Angular2 Component!');
+  }
 }

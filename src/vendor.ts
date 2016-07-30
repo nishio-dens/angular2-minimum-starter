@@ -2,13 +2,14 @@
 import './polyfills';
 
 // Angular 2
-import 'angular2/platform/browser';
-import 'angular2/platform/common_dom';
-import 'angular2/core';
-import 'angular2/router';
-import 'angular2/http';
+import '@angular/platform-browser';
+import '@angular/platform-browser-dynamic';
+import '@angular/core';
+import '@angular/common';
+import '@angular/forms';
+import '@angular/http';
+import '@angular/router';
 
 // RxJS
-import 'rxjs';
-
-// Other vendors for example jQuery or Lodash
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/mergeMap';
